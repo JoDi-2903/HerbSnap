@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var capturedImage: UIImage? = nil
+    @State private var isCustomCameraViewPresented = false
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
