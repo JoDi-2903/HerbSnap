@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var capturedImage: UIImage? = nil
     @State private var flashlightOn = false
+    @State private var useCreateMLModel = true
     
     let cameraService = CameraService()
     
@@ -35,8 +36,8 @@ struct ContentView: View {
                 HStack {
                     // Button for changing between the two ML models
                     // Button for turning flashlight on/off
-                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
-                        if flashlightOn == true {
+                    Button(action: {useCreateMLModel.toggle()}) {
+                        if useCreateMLModel == true {
                             Image(systemName: "c.square")
                                 .font(.system(size: 28))
                                 .foregroundColor(.white)
@@ -63,7 +64,7 @@ struct ContentView: View {
                     Spacer()
                     
                     // Button for app information and about page
-                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
+                    Button(action: {}) {
                         Image(systemName: "questionmark.circle.fill")
                             .font(.system(size: 28))
                             .foregroundColor(.white)
@@ -72,7 +73,6 @@ struct ContentView: View {
                 .padding(.top)
                 .padding(.horizontal)
                 .overlay(AppLogoOverlay, alignment: .center)
-                .overlay(Color.red.opacity(0.5).frame(width: 1, height: 500, alignment: .center))
                 
                 Spacer()
                 
