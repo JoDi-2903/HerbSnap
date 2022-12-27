@@ -33,9 +33,18 @@ struct ContentView: View {
             
             VStack {
                 HStack {
+                    // Button for changing between the two ML models
                     // Button for turning flashlight on/off
                     Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
-                        flashlightOn ? Image(systemName: "bolt.fill") : Image(systemName: "bolt.slash.fill")
+                        if flashlightOn == true {
+                            Image(systemName: "c.square")
+                                .font(.system(size: 28))
+                                .foregroundColor(.white)
+                        } else {
+                            Image(systemName: "t.square")
+                                .font(.system(size: 28))
+                                .foregroundColor(.white)
+                        }
                     }
                     
                     // Button for turning flashlight on/off
@@ -50,6 +59,16 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
+                    
+                    Spacer()
+                    
+                    Group {
+                        Image(systemName: "leaf.fill")
+                        Text("HerbSnap")
+                    }
+                        .font(.system(size: 20))
+                        .foregroundColor(.accentColor)
+                        .padding(.vertical)
                     
                     Spacer()
                     
