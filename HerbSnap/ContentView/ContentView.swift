@@ -66,9 +66,9 @@ struct ContentView: View {
                         Image(systemName: "leaf.fill")
                         Text("HerbSnap")
                     }
-                        .font(.system(size: 20))
-                        .foregroundColor(.accentColor)
-                        .padding(.vertical)
+                    .font(.system(size: 20))
+                    .foregroundColor(.accentColor)
+                    .padding(.vertical)
                     
                     Spacer()
                     
@@ -81,21 +81,41 @@ struct ContentView: View {
                 }
                 .padding(.top)
                 .padding(.horizontal)
-
+                
                 Spacer()
                 
-                // Button for capturing the photo
-                Button(action: {
-                    cameraService.capturePhoto()
-                }, label: {
-                    Image(systemName: "circle")
-                        .font(.system(size: 72))
-                        .foregroundColor(.black)
-                        .background(Color.white.opacity(0.95))
-                        .clipShape(Circle())
-                })
-                .padding(.bottom, 37)
+                HStack {
+                    // Button for opening photo from library
+                    Button(action: {}, label: {
+                        Image(systemName: "photo.on.rectangle.angled")
+                            .font(.system(size: 23))
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.gray.opacity(0.95))
+                            .clipShape(Circle())
+                    })
+                    .padding(.bottom, 37)
+                    .padding(.leading, 25)
+                    
+                    Spacer()
+                }
+                .overlay(ShutterButtonOverlay, alignment: .center)
+                .overlay(Color.red.opacity(0.5).frame(width: 1, height: 500, alignment: .center))
             }
         }
+    }
+    
+    private var ShutterButtonOverlay: some View {
+        // Button for capturing the photo
+        Button(action: {
+            cameraService.capturePhoto()
+        }, label: {
+            Image(systemName: "circle")
+                .font(.system(size: 72))
+                .foregroundColor(.black)
+                .background(Color.white.opacity(0.95))
+                .clipShape(Circle())
+        })
+        .padding(.bottom, 37)
     }
 }
