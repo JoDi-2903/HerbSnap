@@ -9,17 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var capturedImage: UIImage? = nil
-    @State private var isCustomCameraViewPresented = false
+    @State private var flashlightOn = false
     
     let cameraService = CameraService()
     
     var body: some View {
         ZStack {
+            // Show live camera feed
             CameraView(cameraService: cameraService) { result in
                 switch result {
                 case .success(let photo):
                     if let data = photo.fileDataRepresentation() {
                         capturedImage = UIImage(data: data)
+                        print("Image captured successfully.")
                     } else {
                         print("Error: No image data found.")
                     }
@@ -27,6 +29,18 @@ struct ContentView: View {
                     print(err.localizedDescription)
                 }
             }
+            .ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                HStack {
+                    // Button for turning flashlight on/off
+                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
+                        flashlightOn ? Image(systemName: "bolt.fill") : Image(systemName: "bolt.slash.fill")
+                    }
+                }
+            }
+            .padding(.top)
             
             VStack {
                 Spacer()
@@ -41,12 +55,5 @@ struct ContentView: View {
                 .padding(.bottom)
             }
         }
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundColor(.accentColor)
-//            Text("Hello, HerbSnap")
-//        }
-//        .padding()
     }
 }
