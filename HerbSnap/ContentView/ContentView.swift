@@ -62,17 +62,7 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    Group {
-                        Image(systemName: "leaf.fill")
-                        Text("HerbSnap")
-                    }
-                    .font(.system(size: 20))
-                    .foregroundColor(.accentColor)
-                    .padding(.vertical)
-                    
-                    Spacer()
-                    
-                    // Button for app information and about
+                    // Button for app information and about page
                     Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
                         Image(systemName: "questionmark.circle.fill")
                             .font(.system(size: 28))
@@ -81,6 +71,8 @@ struct ContentView: View {
                 }
                 .padding(.top)
                 .padding(.horizontal)
+                .overlay(AppLogoOverlay, alignment: .center)
+                .overlay(Color.red.opacity(0.5).frame(width: 1, height: 500, alignment: .center))
                 
                 Spacer()
                 
@@ -100,13 +92,12 @@ struct ContentView: View {
                     Spacer()
                 }
                 .overlay(ShutterButtonOverlay, alignment: .center)
-                .overlay(Color.red.opacity(0.5).frame(width: 1, height: 500, alignment: .center))
             }
         }
     }
     
+    // Button for capturing the photo
     private var ShutterButtonOverlay: some View {
-        // Button for capturing the photo
         Button(action: {
             cameraService.capturePhoto()
         }, label: {
@@ -117,5 +108,15 @@ struct ContentView: View {
                 .clipShape(Circle())
         })
         .padding(.bottom, 37)
+    }
+    
+    // Overlay for the AppLogo
+    private var AppLogoOverlay: some View {
+        HStack {
+            Image(systemName: "leaf.fill")
+            Text("Herb**Snap**")
+        }
+        .font(.system(size: 20))
+        .foregroundColor(.accentColor)
     }
 }
