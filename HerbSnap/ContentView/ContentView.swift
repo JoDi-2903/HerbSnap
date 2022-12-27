@@ -32,27 +32,50 @@ struct ContentView: View {
             .ignoresSafeArea()
             
             VStack {
-                Spacer()
                 HStack {
                     // Button for turning flashlight on/off
                     Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
                         flashlightOn ? Image(systemName: "bolt.fill") : Image(systemName: "bolt.slash.fill")
                     }
+                    
+                    // Button for turning flashlight on/off
+                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
+                        if flashlightOn == true {
+                            Image(systemName: "bolt.fill")
+                                .font(.system(size: 28))
+                                .foregroundColor(.white)
+                        } else {
+                            Image(systemName: "bolt.slash.fill")
+                                .font(.system(size: 28))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    // Button for app information and about
+                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
+                        Image(systemName: "questionmark.circle.fill")
+                            .font(.system(size: 28))
+                            .foregroundColor(.white)
+                    }
                 }
-            }
-            .padding(.top)
-            
-            VStack {
+                .padding(.top)
+                .padding(.horizontal)
+
                 Spacer()
+                
                 // Button for capturing the photo
                 Button(action: {
                     cameraService.capturePhoto()
                 }, label: {
                     Image(systemName: "circle")
                         .font(.system(size: 72))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
+                        .background(Color.white.opacity(0.95))
+                        .clipShape(Circle())
                 })
-                .padding(.bottom)
+                .padding(.bottom, 37)
             }
         }
     }
