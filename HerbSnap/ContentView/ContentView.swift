@@ -30,7 +30,7 @@ struct ContentView: View {
                     print(err.localizedDescription)
                 }
             }
-            .ignoresSafeArea()
+            .ignoresSafeArea(edges: .top)
             
             VStack {
                 HStack {
