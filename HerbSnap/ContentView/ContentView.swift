@@ -11,6 +11,8 @@ struct ContentView: View {
     @State private var capturedImage: UIImage? = nil
     @State private var flashlightOn = false
     @State private var useCreateMLModel = true
+    @State private var showViewfinder = true
+    @State private var viewfinderFocused = false
     
     let cameraService = CameraService()
     
@@ -74,6 +76,18 @@ struct ContentView: View {
                 .padding(.horizontal)
                 .overlay(AppLogoOverlay, alignment: .center)
                 
+                // Show Viewfinder Rectangle
+                if showViewfinder == true {
+                    HStack(alignment: .center) {
+                        Image(viewfinderFocused ? "ViewFinderRectangle_Green" : "ViewFinderRectangle_White")
+                            .resizable()
+                            .scaledToFit()
+                            .opacity(0.8)
+                    }
+                    .padding(.top, 85)
+                    .padding(.horizontal, 40)
+                }
+                
                 Spacer()
                 
                 HStack {
@@ -86,7 +100,7 @@ struct ContentView: View {
                             .background(Color.gray.opacity(0.95))
                             .clipShape(Circle())
                     })
-                    .padding(.bottom, 37)
+                    .padding(.bottom, 39)
                     .padding(.leading, 25)
                     
                     Spacer()
@@ -107,7 +121,7 @@ struct ContentView: View {
                 .background(Color.white.opacity(0.95))
                 .clipShape(Circle())
         })
-        .padding(.bottom, 37)
+        .padding(.bottom, 39)
     }
     
     // Overlay for the AppLogo
