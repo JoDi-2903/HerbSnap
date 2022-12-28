@@ -12,12 +12,9 @@ struct CaptureView: View {
     @Binding var activeView: Int
     @Binding var capturedImage: UIImage?
     
-//    @State private var capturedImage: UIImage? = nil
     @State private var selectedItems: [PhotosPickerItem] = []
-    //    @State private var selectedImageData: Data? = nil
     @State private var flashlightOn = false
     @State private var useCreateMLModel = true
-    @State private var showViewfinder = true
     @State private var viewfinderFocused = false
     
     let cameraService = CameraService()
@@ -84,7 +81,6 @@ struct CaptureView: View {
                 .overlay(AppLogoOverlay, alignment: .center)
                 
                 // Show Viewfinder Rectangle
-                if showViewfinder == true {
                     HStack(alignment: .center) {
                         Image(viewfinderFocused ? "ViewFinderRectangle_Green" : "ViewFinderRectangle_White")
                             .resizable()
@@ -93,7 +89,6 @@ struct CaptureView: View {
                     }
                     .padding(.top, 85)
                     .padding(.horizontal, 40)
-                }
                 
                 Spacer()
                 
