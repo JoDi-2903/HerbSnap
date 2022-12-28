@@ -9,10 +9,21 @@ import SwiftUI
 
 @main
 struct HerbSnapApp: App {
+    @State var activeView = 1
+    @State var capturedImage: UIImage? = nil
+    
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView()
+                switch activeView {
+                case 1:
+                    CaptureView(activeView: $activeView, capturedImage: $capturedImage)
+                case 2:
+                    ResultsView(activeView: $activeView, capturedImage: $capturedImage)
+                default:
+                    // Error: Invalid view called. Back to default CaptureView.
+                    CaptureView(activeView: $activeView, capturedImage: $capturedImage)
+                }
                 
                 // Transparent color for the top safeArea
                 GeometryReader { reader in

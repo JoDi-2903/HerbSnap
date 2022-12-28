@@ -8,8 +8,11 @@
 import SwiftUI
 import PhotosUI
 
-struct ContentView: View {
-    @State private var capturedImage: UIImage? = nil
+struct CaptureView: View {
+    @Binding var activeView: Int
+    @Binding var capturedImage: UIImage?
+    
+//    @State private var capturedImage: UIImage? = nil
     @State private var selectedItems: [PhotosPickerItem] = []
     //    @State private var selectedImageData: Data? = nil
     @State private var flashlightOn = false
@@ -27,6 +30,7 @@ struct ContentView: View {
                 case .success(let photo):
                     if let data = photo.fileDataRepresentation() {
                         capturedImage = UIImage(data: data)
+                        activeView = 2
                         print("Image captured successfully.")
                     } else {
                         print("Error: No image data found.")
@@ -69,7 +73,7 @@ struct ContentView: View {
                     Spacer()
                     
                     // Button for app information and about page
-                    Button(action: {}) {
+                    Button(action: {activeView = 3}) {
                         Image(systemName: "questionmark.circle.fill")
                             .font(.system(size: 28))
                             .foregroundColor(.white)
@@ -115,6 +119,7 @@ struct ContentView: View {
                                 if let data = data {
                                     //                                    self.selectedImageData = data
                                     capturedImage = UIImage(data: data)
+                                    activeView = 2
                                     print("Image opened successfully.")
                                 } else {
                                     print("Error while opening image from library: Data is nil")
