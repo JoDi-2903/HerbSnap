@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ContentView: View {
     @State private var capturedImage: UIImage? = nil
+    @State private var selectedItems: [PhotosPickerItem] = []
+    //    @State private var selectedImageData: Data? = nil
     @State private var flashlightOn = false
     @State private var useCreateMLModel = true
     @State private var showViewfinder = true
@@ -91,18 +94,38 @@ struct ContentView: View {
                 Spacer()
                 
                 HStack {
-                    // Button for opening photo from library
-                    Button(action: {}, label: {
+                    // Button for opening photo from library via the new PhotosPicker (iOS 16)
+                    PhotosPicker(selection: $selectedItems,
+                                 maxSelectionCount: 1,
+                                 matching: .all(of: [.images, .not(.panoramas), .not(.bursts)])) {
                         Image(systemName: "photo.on.rectangle.angled")
                             .font(.system(size: 23))
                             .padding()
                             .foregroundColor(.white)
                             .background(Color.gray.opacity(0.95))
                             .clipShape(Circle())
-                    })
+                    }
+                    .onChange(of: selectedItems) { newValue in
+                        guard let item = selectedItems.first else {
+                            return
+                        }
+                        item.loadTransferable(type: Data.self) { result in
+                            switch result {
+                            case .success(let data):
+                                if let data = data {
+                                    //                                    self.selectedImageData = data
+                                    capturedImage = UIImage(data: data)
+                                    print("Image opened successfully.")
+                                } else {
+                                    print("Error while opening image from library: Data is nil")
+                                }
+                            case .failure(let failure):
+                                fatalError("Error while opening image from library: \(failure)")
+                            }
+                        }
+                    }
                     .padding(.bottom, 39)
                     .padding(.leading, 25)
-                    
                     Spacer()
                 }
                 .overlay(ShutterButtonOverlay, alignment: .center)
