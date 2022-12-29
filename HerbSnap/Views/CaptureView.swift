@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CaptureView.swift
 //  HerbSnap
 //
 //  Created by Jonathan Diebel on 09.12.22.
