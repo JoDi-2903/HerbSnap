@@ -41,7 +41,6 @@ struct CaptureView: View {
             VStack {
                 HStack {
                     // Button for changing between the two ML models
-                    // Button for turning flashlight on/off
                     Button(action: {useCreateMLModel.toggle()}) {
                         if useCreateMLModel == true {
                             Image(systemName: "c.square")

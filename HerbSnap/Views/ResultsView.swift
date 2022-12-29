@@ -17,8 +17,8 @@ struct ResultsView: View {
             // Show live camera feed
             Image(uiImage: capturedImage!)
                 .resizable()
-                .scaledToFit()
-                .ignoresSafeArea()
+                .scaledToFill()
+                .ignoresSafeArea(edges: .top)
             
             VStack {
                 HStack {
@@ -38,8 +38,8 @@ struct ResultsView: View {
                             .foregroundColor(.white)
                     }
                 }
-                .padding(.top)
-                .padding(.horizontal)
+                .padding(.top, 18) //18
+                .padding(.horizontal, 33) //33
                 .overlay(AppLogoOverlay, alignment: .center)
                 
                 Spacer()
