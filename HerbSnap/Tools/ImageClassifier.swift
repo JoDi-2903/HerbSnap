@@ -10,17 +10,18 @@ import CoreML
 import UIKit
 
 let modelCreateML: HerbsClassifier_7_2022_10_09 = {
-do {
-    let config = MLModelConfiguration()
-    return try HerbsClassifier_7_2022_10_09(configuration: config)
-} catch {
-    print(error)
-    fatalError("Couldn't create HerbsClassifier_7_2022_10_09")
-}
+    do {
+        let config = MLModelConfiguration()
+        return try HerbsClassifier_7_2022_10_09(configuration: config)
+    } catch {
+        print(error)
+        fatalError("Couldn't create HerbsClassifier_7_2022_10_09")
+    }
 }()
 
 func performImageClassification(img: UIImage) -> String {
     var classLabel: String = ""
+//    var classLabelProps = [String]()
     
     // Resize image to the specified input size of the model and create buffer
     guard let reizedImage = img.resizeTo(size: CGSize(width: 299, height: 299)),
@@ -35,7 +36,13 @@ func performImageClassification(img: UIImage) -> String {
     // Unwrap output
     if let output = output {
         classLabel = output.classLabel
-        return classLabel
+        
+        let classLabelProps = output.classLabelProbs.sorted { $0.1 > $1.1 }
+        let classLabelPropsString = classLabelProps.map { (key, value) in
+            return ("\(key) = \(value * 100)%")
+        }
+            .joined(separator: "\n")
+        print (classLabelPropsString)
     }
     
     return classLabel
