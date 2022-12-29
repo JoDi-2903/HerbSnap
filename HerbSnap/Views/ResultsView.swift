@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
-import PhotosUI
+import CoreML
 
 struct ResultsView: View {
     @Binding var activeView: Int
     @Binding var capturedImage: UIImage?
+    
+    @State private var classificationLabel: String = ""
     
     var body: some View {
         ZStack {
@@ -18,7 +20,7 @@ struct ResultsView: View {
             Image(uiImage: capturedImage!)
                 .resizable()
                 .scaledToFill()
-                .ignoresSafeArea(edges: .top)
+                .ignoresSafeArea()
             
             VStack {
                 HStack {
@@ -43,7 +45,15 @@ struct ResultsView: View {
                 .overlay(AppLogoOverlay, alignment: .center)
                 
                 Spacer()
+                
+                Text(classificationLabel)
+                    .padding()
+                    .font(.title)
+                    .foregroundColor(.accentColor)
             }
+        }
+        .onAppear {
+            self.classificationLabel = performImageClassification(img: capturedImage!)
         }
     }
     

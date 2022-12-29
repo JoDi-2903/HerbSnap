@@ -18,6 +18,7 @@
 		6FA6CEE1295DAC3600F0A8B6 /* HerbsClassifier_7_2022_10_09.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEE0295DAC3600F0A8B6 /* HerbsClassifier_7_2022_10_09.mlmodel */; };
 		6FA6CEE4295DB2E700F0A8B6 /* UIImage+ResizeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEE3295DB2E700F0A8B6 /* UIImage+ResizeTo.swift */; };
 		6FA6CEE6295DB40900F0A8B6 /* UIImage+ToBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEE5295DB40900F0A8B6 /* UIImage+ToBuffer.swift */; };
+		6FA6CEE8295DD05200F0A8B6 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEE7295DD05200F0A8B6 /* ImageClassifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		6FA6CEE0295DAC3600F0A8B6 /* HerbsClassifier_7_2022_10_09.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HerbsClassifier_7_2022_10_09.mlmodel; sourceTree = "<group>"; };
 		6FA6CEE3295DB2E700F0A8B6 /* UIImage+ResizeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ResizeTo.swift"; sourceTree = "<group>"; };
 		6FA6CEE5295DB40900F0A8B6 /* UIImage+ToBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ToBuffer.swift"; sourceTree = "<group>"; };
+		6FA6CEE7295DD05200F0A8B6 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				6FA6CEE2295DB25A00F0A8B6 /* Extensions */,
-				6FA6CEDD295CDA0000F0A8B6 /* ViewModel */,
 				6FA6CEDA295B542500F0A8B6 /* Tools */,
 				6F68FAE22948B387001FE40C /* Services */,
 				6F68FAE12948AF6D001FE40C /* Models */,
@@ -89,6 +90,7 @@
 		6F68FAE02948AF67001FE40C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6F68FAE52948B979001FE40C /* CameraView.swift */,
 				6F68FAD22943D321001FE40C /* CaptureView.swift */,
 				6FA6CEDE295CDA9C00F0A8B6 /* ResultsView.swift */,
 			);
@@ -115,16 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				6FA6CEDB295B544C00F0A8B6 /* Flashlight.swift */,
+				6FA6CEE7295DD05200F0A8B6 /* ImageClassifier.swift */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		6FA6CEDD295CDA0000F0A8B6 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6F68FAE52948B979001FE40C /* CameraView.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6FA6CEE2295DB25A00F0A8B6 /* Extensions */ = {
@@ -208,6 +203,7 @@
 			files = (
 				6F68FAD32943D321001FE40C /* CaptureView.swift in Sources */,
 				6FA6CEDF295CDA9C00F0A8B6 /* ResultsView.swift in Sources */,
+				6FA6CEE8295DD05200F0A8B6 /* ImageClassifier.swift in Sources */,
 				6FA6CEE4295DB2E700F0A8B6 /* UIImage+ResizeTo.swift in Sources */,
 				6F68FAD12943D321001FE40C /* HerbSnapApp.swift in Sources */,
 				6FA6CEE6295DB40900F0A8B6 /* UIImage+ToBuffer.swift in Sources */,
