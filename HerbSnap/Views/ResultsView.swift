@@ -11,6 +11,7 @@ import CoreML
 struct ResultsView: View {
     @Binding var activeView: Int
     @Binding var capturedImage: UIImage?
+    @Binding var useCreateMLModel: Bool
     
     @State private var classificationLabel: String = ""
     @State private var classificationLabelProps = Dictionary<String, Double>()

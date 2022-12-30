@@ -11,10 +11,10 @@ import PhotosUI
 struct CaptureView: View {
     @Binding var activeView: Int
     @Binding var capturedImage: UIImage?
+    @Binding var useCreateMLModel: Bool
     
     @State private var selectedItems: [PhotosPickerItem] = []
     @State private var flashlightOn = false
-    @State private var useCreateMLModel = true
     @State private var viewfinderFocused = false
     
     let cameraService = CameraService()

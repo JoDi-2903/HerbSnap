@@ -11,20 +11,21 @@ import SwiftUI
 struct HerbSnapApp: App {
     @State var activeView = 1
     @State var capturedImage: UIImage? = nil
+    @State var useCreateMLModel = true
     
     var body: some Scene {
         WindowGroup {
             ZStack {
                 switch activeView {
                 case 1:
-                    CaptureView(activeView: $activeView, capturedImage: $capturedImage)
+                    CaptureView(activeView: $activeView, capturedImage: $capturedImage, useCreateMLModel: $useCreateMLModel)
                 case 2:
-                    ResultsView(activeView: $activeView, capturedImage: $capturedImage)
+                    ResultsView(activeView: $activeView, capturedImage: $capturedImage, useCreateMLModel: $useCreateMLModel)
                 case 3:
                     InformationView(activeView: $activeView)
                 default:
                     // Error: Invalid view called. Back to default CaptureView.
-                    CaptureView(activeView: $activeView, capturedImage: $capturedImage)
+                    CaptureView(activeView: $activeView, capturedImage: $capturedImage, useCreateMLModel: $useCreateMLModel)
                 }
                 
                 // Transparent color for the top safeArea
