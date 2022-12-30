@@ -41,21 +41,21 @@ struct ResultsView: View {
                             .foregroundColor(.white)
                     }
                 }
-                .padding(.top, 18) //18
-                .padding(.horizontal, 33) //33
+                .padding(.top, 18)
+                .padding(.horizontal, 33)
                 .overlay(AppLogoOverlay, alignment: .center)
                 
                 Spacer()
                 
-                Text(classificationLabel)
-                    .padding()
-                    .font(.title)
-                    .foregroundColor(.accentColor)
+                // Area for FancyToast to appear
+                HStack {}
+                .toastView(toast: $toast)
+                .padding(.horizontal, 17)
             }
         }
         .onAppear {
             self.classificationLabel = performImageClassification(img: capturedImage!)
-//            toast = FancyToast(herbName: "Basilikum", binomialName: "Lorem ipsum", herbImageName: "Basil")
+            toast = FancyToast(herbName: classificationLabel, binomialName: "Lorem ipsum", herbImageName: "Basil")
         }
     }
     

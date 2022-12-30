@@ -14,14 +14,14 @@ struct InformationView: View {
     
     var body: some View {
         VStack {
-                    Button {
-                        toast = FancyToast(herbName: "Basil", binomialName: "Lorem ipsum", herbImageName: "Basil")
-                    } label: {
-                        Text("Run")
-                    }
-
-                }
-                .toastView(toast: $toast)
+            Button {
+                toast = FancyToast(herbName: "Basil", binomialName: "Lorem ipsum", herbImageName: "Basil")
+            } label: {
+                Text("Run")
+            }
+            
+        }
+        .toastView(toast: $toast)
         
     }
 }
