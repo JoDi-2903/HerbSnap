@@ -10,6 +10,12 @@
 "HerbSnap" = "HerbSnap";
 
 // Herb names
-"Basilikum" = "Basilikum_de";
+"Basil" = "Basilikum";
+"Rosemary" = "Rosmarin";
+"Mentha" = "Minzen";
+"Salvia" = "Salbei";
+"Chives" = "Schnittlauch";
+"Thymus" = "Thymiane";
+"Melissa" = "Melissen";
 
 // Information/About view

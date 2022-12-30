@@ -48,6 +48,3 @@ func performImageClassification(img: UIImage) -> (String, Dictionary<String, Dou
     
     return (classLabel, classLabelProps)
 }
-
-// Dictionary for translating the herb names to binomial name
-let binomialHerbName = ["Basil": "Ocimum basilicum"]
