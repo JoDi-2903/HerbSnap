@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  HerbSnap
+
+  Created by Jonathan Diebel on 30.12.22.
+  
+*/
+
+// UI elements
+"HerbSnap" = "HerbSnap";
+
+// Herb names
+"Basilikum" = "Basilikum_de";
+
+// Information/About view
