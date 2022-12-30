@@ -26,7 +26,9 @@ struct ResultsView: View {
             VStack {
                 HStack {
                     // Button for going back to CaptureView
-                    Button(action: {activeView = 1}) {
+                    Button(action: {
+                        activeView = 1
+                    }) {
                         Image(systemName: "chevron.backward")
                             .font(.system(size: 28))
                             .foregroundColor(.white)
@@ -55,7 +57,7 @@ struct ResultsView: View {
         }
         .onAppear {
             self.classificationLabel = performImageClassification(img: capturedImage!)
-            toast = FancyToast(herbName: classificationLabel, binomialName: "Lorem ipsum", herbImageName: "Basil")
+            toast = FancyToast(herbName: [classificationLabel, "Toast2"], binomialName: ["Lorem ipsum", "Lala"], herbImageName: ["Basil", "Basil"], doubleToast: true)
         }
     }
     

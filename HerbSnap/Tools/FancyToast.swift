@@ -3,6 +3,8 @@
 //  HerbSnap
 //
 //  Created by Jonathan Diebel on 30.12.22.
+//  Credits to Farhan Adji ("Create a Fancy Toast Component Using SwiftUI")
+//  Source: https://betterprogramming.pub/swiftui-create-a-fancy-toast-component-in-10-minutes-e6bae6021984
 //
 
 import Foundation
@@ -10,10 +12,11 @@ import SwiftUI
 
 
 struct FancyToast: Equatable {
-    var herbName: String
-    var binomialName: String
-    var herbImageName: String
-    var duration: Double = 5
+    var herbName: [String]
+    var binomialName: [String]
+    var herbImageName: [String]
+    var doubleToast: Bool = false
+    var duration: Double = .infinity
 }
 
 struct FancyToastModifier: ViewModifier {
@@ -38,12 +41,31 @@ struct FancyToastModifier: ViewModifier {
         if let toast = toast {
             VStack {
                 Spacer()
-                FancyToastView(
-                    herbName: toast.herbName,
-                    binomialName: toast.binomialName,
-                    herbImageName: toast.herbImageName) {
-                        dismissToast()
-                    }
+                
+                if toast.doubleToast == true {
+                    FancyToastView(
+                        herbName: toast.herbName[0],
+                        binomialName: toast.binomialName[0],
+                        herbImageName: toast.herbImageName[0]) {
+                            // Open Wikipedia page about the herb
+                            // ...
+                        }
+                    FancyToastView(
+                        herbName: toast.herbName[1],
+                        binomialName: toast.binomialName[1],
+                        herbImageName: toast.herbImageName[1]) {
+                            // Open Wikipedia page about the herb
+                            // ...
+                        }
+                } else {
+                    FancyToastView(
+                        herbName: toast.herbName[0],
+                        binomialName: toast.binomialName[0],
+                        herbImageName: toast.herbImageName[0]) {
+                            // Open Wikipedia page about the herb
+                            // ...
+                        }
+                }
             }
             .transition(.move(edge: .bottom))
         }
@@ -58,7 +80,7 @@ struct FancyToastModifier: ViewModifier {
             workItem?.cancel()
             
             let task = DispatchWorkItem {
-               dismissToast()
+                dismissToast()
             }
             
             workItem = task
