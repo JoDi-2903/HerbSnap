@@ -10,16 +10,20 @@
 import SwiftUI
 
 struct FancyToastView: View {
-    @State var herbName: String = "Basilikum"
-    //    @Binding var herbName: String
-    // Binomial name
     
+    var herbName: String
+    var binomialName: String
+    var herbImageName: String
+    var onLabelTapped: (() -> Void)
     
     var body: some View {
-        Button(action: {print("Herb label tapped.")}) {
+        Button(action: {
+            print("Herb label tapped.")
+            onLabelTapped()
+        }) {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
-                    Image("Basil")
+                    Image(herbImageName)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 120)
@@ -31,7 +35,7 @@ struct FancyToastView: View {
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.black)
                         
-                        Text("Ocimum basilicum")
+                        Text(binomialName)
                             .font(.system(size: 13))
                             .foregroundColor(Color.black.opacity(0.6))
                     }
@@ -58,6 +62,6 @@ struct FancyToastView: View {
 
 struct FancyToastView_Previews: PreviewProvider {
     static var previews: some View {
-        FancyToastView()
+        FancyToastView(herbName: "Basil", binomialName: "Ocimum basilicum", herbImageName: "Basil", onLabelTapped: {})
     }
 }

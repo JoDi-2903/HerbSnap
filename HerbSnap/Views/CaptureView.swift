@@ -135,6 +135,7 @@ struct CaptureView: View {
     // Button for capturing the photo
     private var ShutterButtonOverlay: some View {
         Button(action: {
+            UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
             cameraService.capturePhoto()
         }, label: {
             Image(systemName: "circle")

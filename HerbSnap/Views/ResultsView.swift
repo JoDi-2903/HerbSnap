@@ -13,6 +13,7 @@ struct ResultsView: View {
     @Binding var capturedImage: UIImage?
     
     @State private var classificationLabel: String = ""
+    @State private var toast: FancyToast? = nil
     
     var body: some View {
         ZStack {
@@ -54,6 +55,7 @@ struct ResultsView: View {
         }
         .onAppear {
             self.classificationLabel = performImageClassification(img: capturedImage!)
+//            toast = FancyToast(herbName: "Basilikum", binomialName: "Lorem ipsum", herbImageName: "Basil")
         }
     }
     

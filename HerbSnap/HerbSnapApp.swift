@@ -20,6 +20,8 @@ struct HerbSnapApp: App {
                     CaptureView(activeView: $activeView, capturedImage: $capturedImage)
                 case 2:
                     ResultsView(activeView: $activeView, capturedImage: $capturedImage)
+                case 3:
+                    InformationView(activeView: $activeView)
                 default:
                     // Error: Invalid view called. Back to default CaptureView.
                     CaptureView(activeView: $activeView, capturedImage: $capturedImage)
