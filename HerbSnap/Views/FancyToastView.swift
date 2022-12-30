@@ -10,16 +10,19 @@
 import SwiftUI
 
 struct FancyToastView: View {
+    @State private var showSafari: Bool = false
     
     var herbName: String
     var binomialName: String
     var herbImageName: String
-    var onLabelTapped: (() -> Void)
+//    var onLabelTapped: (() -> Void)
     
     var body: some View {
         Button(action: {
-            print("Herb label tapped.")
-            onLabelTapped()
+            // Open Wikipedia page about the herb
+            print("Herb label \(herbName) tapped.")
+            showSafari.toggle()
+//            onLabelTapped()
         }) {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
@@ -57,11 +60,15 @@ struct FancyToastView: View {
             .shadow(color: Color.black.opacity(0.25), radius: 4, x: 0, y: 1)
             .padding(.horizontal, 17)
         }
+        .fullScreenCover(isPresented: $showSafari, content: {
+            SFSafariViewWrapper(url: URL(string: "https://en.wikipedia.org/wiki/"+herbName) ?? URL(string: "https://www.wikipedia.org")!)
+                .ignoresSafeArea()
+        })
     }
 }
 
 struct FancyToastView_Previews: PreviewProvider {
     static var previews: some View {
-        FancyToastView(herbName: "Basil", binomialName: "Ocimum basilicum", herbImageName: "Basil", onLabelTapped: {})
+        FancyToastView(herbName: "Basil", binomialName: "Ocimum basilicum", herbImageName: "Basil")
     }
 }

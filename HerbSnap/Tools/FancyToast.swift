@@ -46,25 +46,16 @@ struct FancyToastModifier: ViewModifier {
                     FancyToastView(
                         herbName: toast.herbName[0],
                         binomialName: toast.binomialName[0],
-                        herbImageName: toast.herbImageName[0]) {
-                            // Open Wikipedia page about the herb
-                            // ...
-                        }
+                        herbImageName: toast.herbImageName[0])
                     FancyToastView(
                         herbName: toast.herbName[1],
                         binomialName: toast.binomialName[1],
-                        herbImageName: toast.herbImageName[1]) {
-                            // Open Wikipedia page about the herb
-                            // ...
-                        }
+                        herbImageName: toast.herbImageName[1])
                 } else {
                     FancyToastView(
                         herbName: toast.herbName[0],
                         binomialName: toast.binomialName[0],
-                        herbImageName: toast.herbImageName[0]) {
-                            // Open Wikipedia page about the herb
-                            // ...
-                        }
+                        herbImageName: toast.herbImageName[0])
                 }
             }
             .transition(.move(edge: .bottom))
