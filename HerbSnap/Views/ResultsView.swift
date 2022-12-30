@@ -13,6 +13,7 @@ struct ResultsView: View {
     @Binding var capturedImage: UIImage?
     
     @State private var classificationLabel: String = ""
+    @State private var classificationLabelProps = Dictionary<String, Double>()
     @State private var toast: FancyToast? = nil
     
     var body: some View {
@@ -51,12 +52,18 @@ struct ResultsView: View {
                 
                 // Area for FancyToast to appear
                 HStack {}
-                .toastView(toast: $toast)
-                .padding(.horizontal, 17)
+                    .toastView(toast: $toast)
+                    .padding(.horizontal, 17)
             }
         }
         .onAppear {
-            self.classificationLabel = performImageClassification(img: capturedImage!)
+            let classificationResult = performImageClassification(img: capturedImage!)
+            self.classificationLabel = classificationResult.0
+            self.classificationLabelProps = classificationResult.1
+            let classLabelPropsSorted = self.classificationLabelProps.sorted { return $0.value > $1.value }
+            
+            print(classificationLabel)
+            print(classLabelPropsSorted)
             toast = FancyToast(herbName: [classificationLabel, "Toast2"], binomialName: ["Lorem ipsum", "Lala"], herbImageName: ["Basil", "Basil"], doubleToast: true)
         }
     }

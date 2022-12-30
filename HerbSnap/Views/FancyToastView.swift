@@ -61,8 +61,13 @@ struct FancyToastView: View {
             .padding(.horizontal, 17)
         }
         .fullScreenCover(isPresented: $showSafari, content: {
-            SFSafariViewWrapper(url: URL(string: "https://en.wikipedia.org/wiki/"+herbName) ?? URL(string: "https://www.wikipedia.org")!)
-                .ignoresSafeArea()
+            if Locale.preferredLanguages[0] == "de" {
+                SFSafariViewWrapper(url: URL(string: "https://de.wikipedia.org/wiki/"+herbName.localizedLowercase) ?? URL(string: "https://www.wikipedia.org")!)
+                    .ignoresSafeArea()
+            } else {
+                SFSafariViewWrapper(url: URL(string: "https://en.wikipedia.org/wiki/"+herbName) ?? URL(string: "https://www.wikipedia.org")!)
+                    .ignoresSafeArea()
+            }
         })
     }
 }

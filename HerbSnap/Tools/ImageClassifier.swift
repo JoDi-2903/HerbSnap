@@ -19,15 +19,15 @@ let modelCreateML: HerbsClassifier_7_2022_10_09 = {
     }
 }()
 
-func performImageClassification(img: UIImage) -> String {
+func performImageClassification(img: UIImage) -> (String, Dictionary<String, Double>) {
     var classLabel: String = ""
-//    var classLabelProps = [String]()
+    var classLabelProps = Dictionary<String, Double>()
     
     // Resize image to the specified input size of the model and create buffer
     guard let reizedImage = img.resizeTo(size: CGSize(width: 299, height: 299)),
           let buffer = reizedImage.toBuffer() else {
         print("Error while resizing image and creating buffer")
-        return ""
+        return ("", [:])
     }
     
     // Make prediction
@@ -36,16 +36,17 @@ func performImageClassification(img: UIImage) -> String {
     // Unwrap output
     if let output = output {
         classLabel = output.classLabel
+        classLabelProps = output.classLabelProbs
         
-        let classLabelPropsSorted = output.classLabelProbs.sorted { return $0.value > $1.value }
+//        let classLabelPropsSorted = output.classLabelProbs.sorted { return $0.value > $1.value }
 //        let classLabelPropsString = classLabelPropsSorted.map { (key, value) in
 //            return ("\(key) = \(value * 100)%")
 //        }
 //            .joined(separator: "\n")
-        print (classLabelPropsSorted)
+//        print (classLabelPropsSorted)
     }
     
-    return classLabel
+    return (classLabel, classLabelProps)
 }
 
 // Dictionary for translating the herb names to binomial name
