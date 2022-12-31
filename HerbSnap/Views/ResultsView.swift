@@ -19,9 +19,9 @@ struct ResultsView: View {
     
     var body: some View {
         ZStack {
-            // let editedImage = capturedImage?.resizeTo(size: CGSize(width: 299, height: 299)) // Debug
+            let uiImage = capturedImage?.resizeTo(size: CGSize(width: 1080, height: 1920))
             // Show captured image
-            Image(uiImage: capturedImage!)
+            Image(uiImage: uiImage!)
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -51,7 +51,7 @@ struct ResultsView: View {
                 // Area for FancyToast to appear
                 HStack {}
                     .toastView(toast: $toast)
-                    .padding(.horizontal, 17)
+                    .padding()
             }
         }
         .task {

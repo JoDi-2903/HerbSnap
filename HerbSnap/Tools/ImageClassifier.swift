@@ -24,7 +24,7 @@ func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionar
     var classLabelProps = Dictionary<String, Double>()
     
     // Resize image to the specified input size of the model and create buffer
-    guard let reizedImage = img.resizeTo(size: CGSize(width: 299, height: 299)),
+    guard let reizedImage = img.cropAndResizeTo(size: CGSize(width: 299, height: 299)),
           let buffer = reizedImage.toBuffer() else {
         print("Error while resizing image and creating buffer")
         return ("", [:])

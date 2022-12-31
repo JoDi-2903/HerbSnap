@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    func resizeTo(size: CGSize) -> UIImage? {
+    func cropAndResizeTo(size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         
         // Parameters for the center crop (shortest side)
@@ -44,7 +44,15 @@ extension UIImage {
         )
         
         // Resize image
-        croppedUIImage.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let croppedAndResizedImage = croppedUIImage.resizeTo(size: size)
+        return croppedAndResizedImage
+    }
+    
+    func resizeTo(size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        
+        // Resize image
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return resizedImage
