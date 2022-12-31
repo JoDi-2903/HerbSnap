@@ -9,17 +9,17 @@ import Foundation
 import CoreML
 import UIKit
 
-let modelCreateML: HerbsClassifier_7_2022_10_09 = {
+let modelCreateML: HerbsClassifier_7_2022_12_30 = {
     do {
         let config = MLModelConfiguration()
-        return try HerbsClassifier_7_2022_10_09(configuration: config)
+        return try HerbsClassifier_7_2022_12_30(configuration: config)
     } catch {
         print(error)
         fatalError("Couldn't create HerbsClassifier_7_2022_10_09")
     }
 }()
 
-func performImageClassification(img: UIImage) -> (String, Dictionary<String, Double>) {
+func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionary<String, Double>) {
     var classLabel: String = ""
     var classLabelProps = Dictionary<String, Double>()
     
