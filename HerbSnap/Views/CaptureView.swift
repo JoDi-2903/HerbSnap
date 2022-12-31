@@ -36,7 +36,8 @@ struct CaptureView: View {
                     print(err.localizedDescription)
                 }
             }
-            .ignoresSafeArea(edges: .top)
+            .ignoresSafeArea()
+            .background(Color.black)
             
             VStack {
                 HStack {
