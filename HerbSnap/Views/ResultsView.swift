@@ -19,7 +19,8 @@ struct ResultsView: View {
     
     var body: some View {
         ZStack {
-            // Show live camera feed
+            // Show captured photo
+//            let editedImage = capturedImage?.resizeTo(size: CGSize(width: 299, height: 299))
             Image(uiImage: capturedImage!)
                 .resizable()
                 .scaledToFill()
