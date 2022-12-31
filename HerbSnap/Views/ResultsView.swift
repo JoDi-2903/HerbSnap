@@ -87,12 +87,20 @@ struct ResultsView: View {
         
         // Use the probabilities to check whether the result is clear or not
         if (classLabelPropsSorted[0].value - classLabelPropsSorted[1].value) <= 0.2 {
-            herbName.append(contentsOf: [classLabelPropsSorted[0].key, classLabelPropsSorted[1].key])
+            if Locale.preferredLanguages[0].prefix(2) == "de" {
+                herbName.append(contentsOf: [classLabelPropsSorted[0].key.localized, classLabelPropsSorted[1].key.localized])
+            } else {
+                herbName.append(contentsOf: [classLabelPropsSorted[0].key, classLabelPropsSorted[1].key])
+            }
             binomialName.append(contentsOf: [binomialHerbName[classLabelPropsSorted[0].key] ?? "n/a", binomialHerbName[classLabelPropsSorted[1].key] ?? "n/a"])
             herbImageName.append(contentsOf: [classLabelPropsSorted[0].key, classLabelPropsSorted[1].key])
             doubleToast = true
         } else {
-            herbName.append(classLabelPropsSorted[0].key)
+            if Locale.preferredLanguages[0].prefix(2) == "de" {
+                herbName.append(classLabelPropsSorted[0].key.localized)
+            } else {
+                herbName.append(classLabelPropsSorted[0].key)
+            }
             binomialName.append(binomialHerbName[classLabelPropsSorted[0].key] ?? "n/a")
             herbImageName.append(classLabelPropsSorted[0].key)
             doubleToast = false
