@@ -61,7 +61,7 @@ struct FancyToastView: View {
             .padding(.horizontal, 17)
         }
         .fullScreenCover(isPresented: $showSafari, content: {
-            if Locale.preferredLanguages[0] == "de" {
+            if Locale.preferredLanguages[0].prefix(2) == "de" {
                 SFSafariViewWrapper(url: URL(string: "https://de.wikipedia.org/wiki/"+herbName.localizedLowercase) ?? URL(string: "https://www.wikipedia.org")!)
                     .ignoresSafeArea()
             } else {

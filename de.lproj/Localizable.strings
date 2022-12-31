@@ -8,6 +8,7 @@
 
 // UI elements
 "HerbSnap" = "HerbSnap";
+"Back" = "Zurück";
 
 // Herb names
 "Basil" = "Basilikum";
@@ -19,3 +20,6 @@
 "Melissa" = "Melissen";
 
 // Information/About view
+"Photo tips" = "Photo-Tipps";
+"This app was created as part of the student research thesis at DHBW Stuttgart." = "Diese App entstand als Teil der Studienarbeit an der DHBW Stuttgart.";
+"Copyright by Jonathan Diebel" = "Copyright: Jonathan Diebel";
