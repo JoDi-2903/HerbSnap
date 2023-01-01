@@ -37,13 +37,6 @@ func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionar
     if let output = output {
         classLabel = output.classLabel
         classLabelProps = output.classLabelProbs
-        
-//        let classLabelPropsSorted = output.classLabelProbs.sorted { return $0.value > $1.value }
-//        let classLabelPropsString = classLabelPropsSorted.map { (key, value) in
-//            return ("\(key) = \(value * 100)%")
-//        }
-//            .joined(separator: "\n")
-//        print (classLabelPropsSorted)
     }
     
     return (classLabel, classLabelProps)
