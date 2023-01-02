@@ -21,7 +21,11 @@
 
 // Information/About view
 "HerbSnap is an app for classifying herbs based on photos of the plant. As input data, a photo can either be taken directly via the app or an existing image from the gallery can be opened. The app processes the data on the device and uses artificial intelligence to determine the herb species. Two different prediction models are available, which can be switched between using the button in the upper right corner. One model was generated with CreateML from Apple and the other with TensorFlow from Google. As result, the detected herb species is output, with a direct link to the Wikipedia page for more information. If the prediction of the model is not completely clear, the two most probable prediction classes are output." = "HerbSnap ist eine App zur Klassifikation von Kräuter anhand von Fotos der Pflanze. Als Eingabedaten kann wahlweise direkt eine Foto über die App aufgenommen oder ein vorhandenes Bild aus der Galerie geöffnet werden. Die App verarbeitet die Daten auf dem Gerät und setzt Künstliche Intelligenz für die Bestimmung der Kräuter-Art ein. Hierbei stehen zwei verschiedene Vorhersagemodelle bereit, zwischen denen mit dem Button oben rechts gewechselt werden kann. Ein Modell wurde mit CreateML von Apple generiert und das andere mit TensorFlow von Google. Als Ergebnis wird die erkannte Kräuter-Art, mit einem direkten Link zur Wikipedia-Seite für weitere Informationen, ausgegeben. Sollte die Vorhersage des Modells nicht ganz eindeutig sein, werden die zwei wahrscheinlichsten Vorhersageklassen ausgegeben.";
-"Photo tips" = "Photo-Tipps";
+"Photo tips" = "Foto-Tipps";
+"too close" = "zu nah";
+"too far" = "zu fern";
+"several types" = "mehrere Arten";
+
 "This app was created as part of the student research thesis at DHBW Stuttgart." = "Diese App entstand als Teil der Studienarbeit an der DHBW Stuttgart.";
 "Legal notice" = "Rechtlicher Hinweis";
 "Copyright by Jonathan Diebel" = "Copyright: Jonathan Diebel";

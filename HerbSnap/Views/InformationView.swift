@@ -40,7 +40,13 @@ struct InformationView: View {
                         .bold()
                         .padding(.all, 5)
                     //.padding(.bottom, 10)
-                    Text(Locale.preferredLanguages[0])
+                    HStack(alignment: .center) {
+                        Text("too close")
+                        Spacer()
+                        Text("too far")
+                        Spacer()
+                        Text("several types")
+                    }
                 }
                 Section {
                     let year = Calendar(identifier: .gregorian).component(.year, from: Date())
