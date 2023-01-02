@@ -28,7 +28,8 @@ struct InformationView: View {
                         
                         Spacer(minLength: 5)
                         
-                        Text("The app 'Swidget' was developed to present the WidgetKit and its functionalities as an example. The aim of the project is not to create an AppStore-ready application, but to present the framework in a demo. As content for the widgets and general theme movies were chosen, which are provided by the open 'The Movie Database' (TMDB) API. This app contains four pages and seven widgets, divided into three widget groups.")
+                        Text("HerbSnap is an app for classifying herbs based on photos of the plant. As input data, a photo can either be taken directly via the app or an existing image from the gallery can be opened. The app processes the data on the device and uses artificial intelligence to determine the herb species. Two different prediction models are available, which can be switched between using the button in the upper right corner. One model was generated with CreateML from Apple and the other with TensorFlow from Google. As result, the detected herb species is output, with a direct link to the Wikipedia page for more information. If the prediction of the model is not completely clear, the two most probable prediction classes are output.")
+                            .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .padding(.all, 10)
