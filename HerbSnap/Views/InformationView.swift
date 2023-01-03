@@ -40,12 +40,34 @@ struct InformationView: View {
                         .bold()
                         .padding(.all, 5)
                     //.padding(.bottom, 10)
-                    HStack(alignment: .center) {
-                        Text("too close")
-                        Spacer()
-                        Text("too far")
-                        Spacer()
-                        Text("several types")
+                    VStack {
+                        Image("PhotoTips_1")
+                            .resizable()
+                            .scaledToFit()
+                        HStack(alignment: .center) {
+                            VStack {
+                                Image("PhotoTips_2_1")
+                                    .resizable()
+                                    .scaledToFit()
+                                Text("too close")
+                            }
+                            Spacer()
+                            VStack {
+                                Image("PhotoTips_2_2")
+                                    .resizable()
+                                    .scaledToFit()
+                                
+                                Text("too far")
+                            }
+                            Spacer()
+                            VStack {
+                                Image("PhotoTips_2_3")
+                                    .resizable()
+                                    .scaledToFit()
+                                
+                                Text("several types")
+                            }
+                        }
                     }
                 }
                 Section {
@@ -55,8 +77,10 @@ struct InformationView: View {
                         .font(.headline)
                         .bold()
                         .padding(.all, 5)
-                    Text("This app was created as part of the student research thesis at DHBW Stuttgart.")
-                    Text("Copyright by Jonathan Diebel" + " " + String(year))
+                    VStack(alignment: .leading) {
+                        Text("This app was created as part of the student research thesis at DHBW Stuttgart.")
+                        Text("Copyright by Jonathan Diebel" + " " + String(year))
+                    }
                 }
             }
             .navigationTitle("HerbSnap")
