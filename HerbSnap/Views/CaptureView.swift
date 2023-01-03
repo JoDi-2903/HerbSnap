@@ -27,6 +27,7 @@ struct CaptureView: View {
                 case .success(let photo):
                     if let data = photo.fileDataRepresentation() {
                         capturedImage = UIImage(data: data)
+                        if flashlightOn == true { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn) }
                         activeView = 2
                         print("Image captured successfully.")
                     } else {
@@ -55,7 +56,7 @@ struct CaptureView: View {
                     }
                     
                     // Button for turning flashlight on/off
-                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn)}) {
+                    Button(action: { flashlightOn = toggleFlashlight(flashlightOn: flashlightOn) }) {
                         if flashlightOn == true {
                             Image(systemName: "bolt.fill")
                                 .font(.system(size: 28))
