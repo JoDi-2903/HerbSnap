@@ -6,9 +6,15 @@ HerbSnap is an app for classifying herbs based on photos of the plant. As input 
 <br/>
 This app was created as part of the student research thesis at DHBW Stuttgart.
 
+<h2>Supported herb species</h2>
+
+Currently, the two models support the following herbal classes:
+* x
+* y
+
 <h2>Screenshots</h2>
 
-![01_Overview_of_the_four_app_views](https://user-images.githubusercontent.com/88625959/175783758-01b9d7d3-d927-4121-b724-dedcdb741349.png)
+![01_Overview_of_the_four_app_views](https://user-images.githubusercontent.com/88625959/175783568-ae1c9018-446a-48fc-8287-7a545e901d1b.png)
 
 <b>Figure 1:</b> <i>Overview of the capture screen, photo selection and about page</i>
 <br/><br/>
