@@ -10,10 +10,10 @@ This app was created as part of the student research thesis at DHBW Stuttgart.
 
 ![01_Overview_of_the_four_app_views](https://user-images.githubusercontent.com/88625959/175783758-01b9d7d3-d927-4121-b724-dedcdb741349.png)
 
-<b>Figure 1:</b> <i>Overview of the four app views</i>
+<b>Figure 1:</b> <i>Overview of the capture screen, photo selection and about page</i>
 <br/><br/>
 
 ![02_Widget-Gruppen in der Widget Gallery](https://user-images.githubusercontent.com/88625959/175783568-ae1c9018-446a-48fc-8287-7a545e901d1b.png)
 
-<b>Figure 2:</b> <i>Widget groups in Widget Gallery</i>
+<b>Figure 2:</b> <i>Result presentation and link to Wikipedia page</i>
 <br/><br/>
