@@ -14,7 +14,7 @@ Currently, the two models support the following herbal classes:
 
 <h2>Screenshots</h2>
 
-![01_Overview of the app pages](https://user-images.githubusercontent.com/88625959/211192591-0ed18752-a646-4b38-b251-49ac3d2551bd.png)
+![01_Overview of the app pages](https://user-images.githubusercontent.com/88625959/211192917-cb37e73b-bbaa-4430-a2c7-a8926502a062.png)
 
 <b>Figure 1:</b> <i>Overview of the capture screen, photo selection and about page</i>
 <br/><br/>
