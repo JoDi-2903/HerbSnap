@@ -14,12 +14,12 @@ Currently, the two models support the following herbal classes:
 
 <h2>Screenshots</h2>
 
-![01_Overview_of_the_four_app_views](https://user-images.githubusercontent.com/88625959/175783568-ae1c9018-446a-48fc-8287-7a545e901d1b.png)
+![01_Overview of the app pages](https://user-images.githubusercontent.com/88625959/211192591-0ed18752-a646-4b38-b251-49ac3d2551bd.png)
 
 <b>Figure 1:</b> <i>Overview of the capture screen, photo selection and about page</i>
 <br/><br/>
 
-![02_Widget-Gruppen in der Widget Gallery](https://user-images.githubusercontent.com/88625959/175783568-ae1c9018-446a-48fc-8287-7a545e901d1b.png)
+![02_Result presentation](https://user-images.githubusercontent.com/88625959/211192618-55255335-b8f1-409d-beaf-8df818d112ed.png)
 
 <b>Figure 2:</b> <i>Result presentation and link to Wikipedia page</i>
 <br/><br/>
