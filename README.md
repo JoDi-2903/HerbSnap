@@ -9,12 +9,18 @@ This app was created as part of the student research thesis at DHBW Stuttgart.
 <h2>Supported herb species</h2>
 
 Currently, the two models support the following herbal classes:
+* Allium ursinum
 * Basil
 * Chives
+* Dill
+* Garden cress
+* Laurus nobilis
+* Lovage
 * Melissa
 * Mentha
 * Rosemary
 * Salvia
+* Sweet woodruff
 * Thymus
 
 <h2>Screenshots</h2>
