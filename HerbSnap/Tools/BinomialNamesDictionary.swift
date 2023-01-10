@@ -14,5 +14,11 @@ let binomialHerbName = ["Basil": "Ocimum basilicum",
                         "Salvia": "Salvia",
                         "Chives": "Allium schoenoprasum",
                         "Thymus": "Thymus",
-                        "Melissa": "Melissa"
+                        "Melissa": "Melissa",
+                        "Lovage": "Levisticum officinale",
+                        "Dill": "Anethum graveolens",
+                        "Wild garlic": "Allium ursinum",
+                        "Laurus nobilis": "Laurus nobilis",
+                        "Sweet woodruff": "Galium odoratum",
+                        "Garden cress": "Lepidium sativum"
 ]
