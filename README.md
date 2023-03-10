@@ -16,12 +16,14 @@ Currently, the two models support the following herbal classes:
 * Garden cress
 * Laurus nobilis
 * Lovage
-* Melissa
+* Marjoram
 * Mentha
+* Parsley
 * Rosemary
 * Salvia
 * Sweet woodruff
 * Thymus
+* Tropaeolum
 
 <h2>Screenshots</h2>
 
