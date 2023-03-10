@@ -10,10 +10,10 @@ import CoreML
 import UIKit
 
 // CreateML model
-let modelCreateML: HerbsClassifier_7_2022_12_30 = {
+let modelCreateML: HerbsClassifier_CreateML = {
     do {
         let config = MLModelConfiguration()
-        return try HerbsClassifier_7_2022_12_30(configuration: config)
+        return try HerbsClassifier_CreateML(configuration: config)
     } catch {
         print(error)
         fatalError("Couldn't create CreateML model")
@@ -21,10 +21,10 @@ let modelCreateML: HerbsClassifier_7_2022_12_30 = {
 }()
 
 // TensorFlow model
-let modelTensorFlow: HerbsClassifier_7_2022_10_09 = {
+let modelTensorFlow: HerbsClassifier_7_2022_12_30 = {
     do {
         let config = MLModelConfiguration()
-        return try HerbsClassifier_7_2022_10_09(configuration: config)
+        return try HerbsClassifier_7_2022_12_30(configuration: config)
     } catch {
         print(error)
         fatalError("Couldn't create TensorFlow model")
