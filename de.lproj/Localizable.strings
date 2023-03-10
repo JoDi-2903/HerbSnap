@@ -11,19 +11,21 @@
 "Back" = "Zurück";
 
 // Herb names
-"Wild garlic" = "Bärlauch";
+"Allium ursinum" = "Bärlauch";
 "Basil" = "Basilikum";
 "Chives" = "Schnittlauch";
 "Dill" = "Dill";
 "Garden cress" = "Gartenkresse";
 "Laurus nobilis" = "Lorbeer";
 "Lovage" = "Liebstöckel";
-"Melissa" = "Melissen";
+"Marjoram" = "Majoran";
 "Mentha" = "Minzen";
+"Parsley" = "Petersilie";
 "Rosemary" = "Rosmarin";
 "Salvia" = "Salbei";
 "Sweet woodruff" = "Waldmeister";
 "Thymus" = "Thymiane";
+"Tropaeolum" = "Kapuzinerkressen";
 
 
 

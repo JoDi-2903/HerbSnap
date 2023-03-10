@@ -8,17 +8,19 @@
 import Foundation
 
 // Dictionary for translating the herb names to binomial name
-let binomialHerbName = ["Basil": "Ocimum basilicum",
-                        "Rosemary": "Salvia rosmarinus",
-                        "Mentha": "Mentha",
-                        "Salvia": "Salvia",
+let binomialHerbName = ["Allium ursinum": "Allium ursinum",
+                        "Basil": "Ocimum basilicum",
                         "Chives": "Allium schoenoprasum",
-                        "Thymus": "Thymus",
-                        "Melissa": "Melissa",
-                        "Lovage": "Levisticum officinale",
                         "Dill": "Anethum graveolens",
-                        "Wild garlic": "Allium ursinum",
+                        "Garden cress": "Lepidium sativum",
                         "Laurus nobilis": "Laurus nobilis",
+                        "Lovage": "Levisticum officinale",
+                        "Marjoram": "Origanum majorana",
+                        "Mentha": "Mentha",
+                        "Parsley": "Petroselinum crispum",     
+                        "Rosemary": "Salvia rosmarinus",
+                        "Salvia": "Salvia",
                         "Sweet woodruff": "Galium odoratum",
-                        "Garden cress": "Lepidium sativum"
+                        "Thymus": "Thymus",
+                        "Tropaeolum": "Nasturtium"
 ]
