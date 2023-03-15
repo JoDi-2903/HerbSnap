@@ -36,6 +36,7 @@ struct HerbSnapApp: App {
                             .opacity(0.6)
                             .ignoresSafeArea(edges: .top)
                     }
+                    .preferredColorScheme(.dark)
                 }
             }
         }
