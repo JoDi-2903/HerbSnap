@@ -21,10 +21,10 @@ let modelCreateML: HerbsClassifier_CreateML = {
 }()
 
 // TensorFlow model
-let modelTensorFlow: HerbsClassifier_7_2022_12_30 = {
+let modelTensorFlow: HerbsClassifier_TensorFlow = {
     do {
         let config = MLModelConfiguration()
-        return try HerbsClassifier_7_2022_12_30(configuration: config)
+        return try HerbsClassifier_TensorFlow(configuration: config)
     } catch {
         print(error)
         fatalError("Couldn't create TensorFlow model")
@@ -42,7 +42,7 @@ func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionar
         inputSize = CGSize(width: 299, height: 299)
     } else {
         // Size for TensorFlow model
-        inputSize = CGSize(width: 299, height: 299)
+        inputSize = CGSize(width: 180, height: 180)
     }
     
     // Resize image to the specified input size of the model and create buffer
@@ -63,11 +63,11 @@ func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionar
         }
     } else {
         // TensorFlow model
-        let output = try? modelTensorFlow.prediction(image: buffer)
+        let output = try? modelTensorFlow.prediction(sequential_input: buffer)
         // Unwrap output
         if let output = output {
             classLabel = output.classLabel
-            classLabelProps = output.classLabelProbs
+            classLabelProps = [classLabel: 0.9, "placeholderLabel": 0.1]
         }
     }
     

@@ -25,9 +25,9 @@
 		6FA6CEF6295F089300F0A8B6 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEF5295F089300F0A8B6 /* InformationView.swift */; };
 		6FA6CEF8295F782A00F0A8B6 /* SFSafariViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEF7295F782A00F0A8B6 /* SFSafariViewWrapper.swift */; };
 		6FA6CEFA295F8EF200F0A8B6 /* BinomialNamesDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEF9295F8EF200F0A8B6 /* BinomialNamesDictionary.swift */; };
-		6FA6CEFC2960754700F0A8B6 /* HerbsClassifier_7_2022_12_30.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEFB2960754700F0A8B6 /* HerbsClassifier_7_2022_12_30.mlmodel */; };
 		6FA6CEFE2960787200F0A8B6 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6CEFD2960787200F0A8B6 /* String+localized.swift */; };
-		6FF23DEF29BBCAAE007365CB /* HerbsClassifier_CreateML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6FF23DEE29BBCAAE007365CB /* HerbsClassifier_CreateML.mlmodel */; };
+		6FD2606129CB39000030AC89 /* HerbsClassifier_TensorFlow.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2606029CB39000030AC89 /* HerbsClassifier_TensorFlow.mlmodel */; };
+		6FD2606329CB3A020030AC89 /* HerbsClassifier_CreateML.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2606229CB3A020030AC89 /* HerbsClassifier_CreateML.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +51,9 @@
 		6FA6CEF5295F089300F0A8B6 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		6FA6CEF7295F782A00F0A8B6 /* SFSafariViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariViewWrapper.swift; sourceTree = "<group>"; };
 		6FA6CEF9295F8EF200F0A8B6 /* BinomialNamesDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinomialNamesDictionary.swift; sourceTree = "<group>"; };
-		6FA6CEFB2960754700F0A8B6 /* HerbsClassifier_7_2022_12_30.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HerbsClassifier_7_2022_12_30.mlmodel; sourceTree = "<group>"; };
 		6FA6CEFD2960787200F0A8B6 /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
-		6FF23DEE29BBCAAE007365CB /* HerbsClassifier_CreateML.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HerbsClassifier_CreateML.mlmodel; sourceTree = "<group>"; };
+		6FD2606029CB39000030AC89 /* HerbsClassifier_TensorFlow.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HerbsClassifier_TensorFlow.mlmodel; sourceTree = "<group>"; };
+		6FD2606229CB3A020030AC89 /* HerbsClassifier_CreateML.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HerbsClassifier_CreateML.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +122,8 @@
 		6F68FAE12948AF6D001FE40C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6FF23DEE29BBCAAE007365CB /* HerbsClassifier_CreateML.mlmodel */,
-				6FA6CEFB2960754700F0A8B6 /* HerbsClassifier_7_2022_12_30.mlmodel */,
+				6FD2606029CB39000030AC89 /* HerbsClassifier_TensorFlow.mlmodel */,
+				6FD2606229CB3A020030AC89 /* HerbsClassifier_CreateML.mlpackage */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,7 +233,6 @@
 			files = (
 				6FA6CEF0295EEC8600F0A8B6 /* FancyToastView.swift in Sources */,
 				6F68FAD32943D321001FE40C /* CaptureView.swift in Sources */,
-				6FA6CEFC2960754700F0A8B6 /* HerbsClassifier_7_2022_12_30.mlmodel in Sources */,
 				6FA6CEF4295F050A00F0A8B6 /* View+ToastView.swift in Sources */,
 				6FA6CEDF295CDA9C00F0A8B6 /* ResultsView.swift in Sources */,
 				6FA6CEE8295DD05200F0A8B6 /* ImageClassifier.swift in Sources */,
@@ -244,10 +243,11 @@
 				6FA6CEF2295EFF1B00F0A8B6 /* FancyToast.swift in Sources */,
 				6FA6CEDC295B544C00F0A8B6 /* Flashlight.swift in Sources */,
 				6F68FAE42948B3B5001FE40C /* CameraService.swift in Sources */,
-				6FF23DEF29BBCAAE007365CB /* HerbsClassifier_CreateML.mlmodel in Sources */,
 				6FA6CEFA295F8EF200F0A8B6 /* BinomialNamesDictionary.swift in Sources */,
 				6FA6CEF8295F782A00F0A8B6 /* SFSafariViewWrapper.swift in Sources */,
 				6FA6CEFE2960787200F0A8B6 /* String+localized.swift in Sources */,
+				6FD2606129CB39000030AC89 /* HerbsClassifier_TensorFlow.mlmodel in Sources */,
+				6FD2606329CB3A020030AC89 /* HerbsClassifier_CreateML.mlpackage in Sources */,
 				6F68FAE62948B979001FE40C /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
