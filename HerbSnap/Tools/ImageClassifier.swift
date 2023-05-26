@@ -37,13 +37,8 @@ func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionar
     var inputSize: CGSize
     
     // Define input sizes for the two models
-    if model == true {
-        // Size for CreateML model
-        inputSize = CGSize(width: 299, height: 299)
-    } else {
-        // Size for TensorFlow model
-        inputSize = CGSize(width: 180, height: 180)
-    }
+    // For a fairer comparison, both models were trained on the same input image size
+    inputSize = CGSize(width: 299, height: 299)
     
     // Resize image to the specified input size of the model and create buffer
     guard let reizedImage = img.cropAndResizeTo(size: inputSize),
@@ -63,11 +58,11 @@ func performImageClassification(img: UIImage, model: Bool) -> (String, Dictionar
         }
     } else {
         // TensorFlow model
-        let output = try? modelTensorFlow.prediction(sequential_input: buffer)
+        let output = try? modelTensorFlow.prediction(image: buffer)
         // Unwrap output
         if let output = output {
             classLabel = output.classLabel
-            classLabelProps = [classLabel: 0.9, "placeholderLabel": 0.1]
+            classLabelProps = output.classLabelProbs
         }
     }
     
